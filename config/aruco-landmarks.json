@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "layout_name": "microduck-aruco-cardinal-4-v1",
+  "dictionary": "DICT_4X4_50",
+  "print": {
+    "paper": "A4 portrait",
+    "paper_width_mm": 210,
+    "paper_height_mm": 297,
+    "black_square_mm": 160,
+    "border_bits": 1,
+    "quiet_zone_min_mm": 20,
+    "scale_bar_mm": 100,
+    "print_scale_percent": 100,
+    "marker_center_from_paper_bottom_mm": 160,
+    "paper_bottom_height_above_floor_mm": 40
+  },
+  "world_frame": {
+    "units": "m",
+    "origin": "floor centre of work zone",
+    "x_positive": "towards marker_0",
+    "y_positive": "towards marker_1",
+    "z_positive": "up"
+  },
+  "layout": {
+    "marker_center_height_m": 0.2,
+    "marker_radius_m": 1.2,
+    "work_zone_bounds_m": [
+      -1,
+      1,
+      -1,
+      1
+    ],
+    "boundary_margin_m": 0.2,
+    "robot_reference_limits_m": [
+      -0.8,
+      0.8,
+      -0.8,
+      0.8
+    ],
+    "initial_robot_yaw_rad": 0,
+    "first_goal": "find marker_0; then approach marker_0",
+    "continuous_360_visibility_guaranteed": false
+  },
+  "markers": {
+    "0": {
+      "label": "marker_0",
+      "size_m": 0.16,
+      "T_world_marker": [
+        [
+          0,
+          0,
+          -1,
+          1.2
+        ],
+        [
+          -1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0.2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "1": {
+      "label": "marker_1",
+      "size_m": 0.16,
+      "T_world_marker": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1,
+          1.2
+        ],
+        [
+          0,
+          1,
+          0,
+          0.2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "2": {
+      "label": "marker_2",
+      "size_m": 0.16,
+      "T_world_marker": [
+        [
+          0,
+          0,
+          1,
+          -1.2
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0.2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "3": {
+      "label": "marker_3",
+      "size_m": 0.16,
+      "T_world_marker": [
+        [
+          -1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          -1.2
+        ],
+        [
+          0,
+          1,
+          0,
+          0.2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  }
+}

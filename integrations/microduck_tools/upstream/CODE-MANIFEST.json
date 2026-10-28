@@ -1,0 +1,255 @@
+{
+  "date_local": "2026-10-26",
+  "stage": "pre-servo-health-code-baseline",
+  "files": [
+    {
+      "path": "calibration/common/apply_source_patch.py",
+      "sha256": "924219cbcc3a1f591d7721295cf7051c3b8cc362efd116d8e3bef35a92b271c3"
+    },
+    {
+      "path": "calibration/common/duck_calibrate.py",
+      "sha256": "a35186a1aa2147d369ec033724bd60901fca7e761115d0b1707954d1f16a9b05"
+    },
+    {
+      "path": "calibration/daemon-v0.16.3/apply_source_patch.py",
+      "sha256": "924219cbcc3a1f591d7721295cf7051c3b8cc362efd116d8e3bef35a92b271c3"
+    },
+    {
+      "path": "calibration/daemon-v0.16.3/calibration_web.py",
+      "sha256": "eb8bbb74c1fa7ccd8a3c4d3c99a9e7f3d22307d3fefc072b22b505a65f7fa4e7"
+    },
+    {
+      "path": "calibration/daemon-v0.16.3/duck_calibrate.py",
+      "sha256": "a35186a1aa2147d369ec033724bd60901fca7e761115d0b1707954d1f16a9b05"
+    },
+    {
+      "path": "calibration/daemon-v0.16.3/index.html",
+      "sha256": "e727925e15f50ec02bdc39d6ef0298bc216366c590730e4296c2ccd73033d934"
+    },
+    {
+      "path": "calibration/daemon-v0.17.8/apply_source_patch.py",
+      "sha256": "924219cbcc3a1f591d7721295cf7051c3b8cc362efd116d8e3bef35a92b271c3"
+    },
+    {
+      "path": "calibration/daemon-v0.17.8/calibration_web.py",
+      "sha256": "eb8bbb74c1fa7ccd8a3c4d3c99a9e7f3d22307d3fefc072b22b505a65f7fa4e7"
+    },
+    {
+      "path": "calibration/daemon-v0.17.8/duck_calibrate.py",
+      "sha256": "a35186a1aa2147d369ec033724bd60901fca7e761115d0b1707954d1f16a9b05"
+    },
+    {
+      "path": "calibration/daemon-v0.17.8/index.html",
+      "sha256": "e727925e15f50ec02bdc39d6ef0298bc216366c590730e4296c2ccd73033d934"
+    },
+    {
+      "path": "calibration/examples/demo-0.16.3.toml",
+      "sha256": "39b166805bd39e2887758a66580631ddfdcc1759ae2b9634dc6da942fd25e910"
+    },
+    {
+      "path": "calibration/examples/demo-0.17.8.toml",
+      "sha256": "c44b37a5cc3df42bf37079c2f1802081e37b8be89ca2fdb6c479ff83d474dbcd"
+    },
+    {
+      "path": "calibration/examples/demo-gyro-16-4-daemon-v0.16.3.toml",
+      "sha256": "44b60b8a50240eb04475bdad629a0c1b7180a684bd1eb8a1886f3e4179e6b473"
+    },
+    {
+      "path": "calibration/examples/demo-gyro-16-4-daemon-v0.17.8.toml",
+      "sha256": "ac8d7619375dc0ca8cd4cf87e3ab01791674b42c06fff88ac67ef083aec059f1"
+    },
+    {
+      "path": "calibration/examples/generate_synthetic_captures.py",
+      "sha256": "98cf433db7ef1775bb94df2fad791a77b29b83ba409875ec8a4378e0f2ab71e8"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/imu/back.jsonl",
+      "sha256": "3ed1a13d79880aeb1a23aa7f4bc46d213dedc246d74c76c9ca3d496cbf5b43d4"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/imu/fwd.jsonl",
+      "sha256": "9f701c9fc548413509019e1a0b9b1d38cbb8116bac7fff9d77c003c91efaf233"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/imu/left.jsonl",
+      "sha256": "9f19435c3b271be595da410328bc4d69a82a5afa02b1fde1073cdd0c6fd67c92"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/imu/right.jsonl",
+      "sha256": "badfb8840f1b0b566e7d36d7a876b3c6d92235d1c0ff2a115d960d71368a798a"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/imu/still.jsonl",
+      "sha256": "7646ec06967c9f0531efea87fb51e2666ac8b42704e8555fcd551186b0091c3b"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/positive_head_pitch.jsonl",
+      "sha256": "ecc36dfc87ba4e2a0b7fac8ecea5d81f3db957d207976cb2553614cf1c892a23"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/positive_head_roll.jsonl",
+      "sha256": "a23cd2ab83092660e2b6724c3e51b66df5dcd8f55cf5dcee7ce501c713f05b03"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/positive_head_yaw.jsonl",
+      "sha256": "57f047dcbc4807cf428ce3f3fca4494318e9a9de1a814908a833b2325e6492a3"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/positive_left_ankle.jsonl",
+      "sha256": "14ca1cc3746873b4363e28d28df2b85f1cbec9e3cb2a7aad157e9603ebe3bddf"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/positive_left_hip_pitch.jsonl",
+      "sha256": "c5051b216074e915afc3836428f5519750b6d938ec6991537affa7d3102a47c2"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/positive_left_hip_roll.jsonl",
+      "sha256": "7fca240206502cbb9e73dbe36160951ff759ac8432df01c46b3b7f8925c82a18"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/positive_left_hip_yaw.jsonl",
+      "sha256": "2de9205a5dbf91b9098a0d34ea8eb7dc4b21a4a01f2a609eff520e90dbd9fb7b"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/positive_left_knee.jsonl",
+      "sha256": "fcead861f8e2d8c323dae9750e5fe7d433f6f81034a2fb1de9294d9ffb25df40"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/positive_mouth.jsonl",
+      "sha256": "c5e30a57aa2035817a1f3139166c5d534b35517f9dc24ad1786b914d40556372"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/positive_neck_pitch.jsonl",
+      "sha256": "c2ccd66da2e7c5afa9c3e6b33773e527abe56ed957f335d8b5a5e4b078e6939a"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/positive_right_ankle.jsonl",
+      "sha256": "a1073c898839842d3c1913218b50186cfeb58cb2b5c0bf895f40a2cd19a70de6"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/positive_right_hip_pitch.jsonl",
+      "sha256": "bcf2eb05148d279065ae1fe9f439df38f38df0547d982efc134ce58c41939ba1"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/positive_right_hip_roll.jsonl",
+      "sha256": "a42221e48a81db68e658319df26769e3d46675afc9329065d070e92fe9f621db"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/positive_right_hip_yaw.jsonl",
+      "sha256": "14888de06c682778212384f22941f791969e9cf90c2549a66f32000032ad61cc"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/positive_right_knee.jsonl",
+      "sha256": "fb14a8fd8457508eb082e9a305116c8f95f2429c6edf5104b3053a3b37c9bd48"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/zero_head_pitch.jsonl",
+      "sha256": "07707a2e2b71182dbe6b44e456a8f70d9583fffd50c4d91c2d4a2768bee30983"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/zero_head_roll.jsonl",
+      "sha256": "daad891fecffa49a13a4ff0ed8c5c0da60355f7311aaa282ab433e0925d8a560"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/zero_head_yaw.jsonl",
+      "sha256": "1991047039c2770187ea2f06656d252d760d4a2f332715dde4c56fcea4456445"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/zero_left_ankle.jsonl",
+      "sha256": "374e020521da85dc2aa502768c57a13dd7e1d0d43242c5badc8c400081c4107b"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/zero_left_hip_pitch.jsonl",
+      "sha256": "a252e159465e6e4d00f996a4f0d6045aaf449e26f6c56684586cca87088abd50"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/zero_left_hip_roll.jsonl",
+      "sha256": "b10f2989a212bae8ce72d6c67e80ceda8f9ef9857cc054e4e5e99dfddfd4e533"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/zero_left_hip_yaw.jsonl",
+      "sha256": "d1f26b361021bdb6c9c0ceb2ff82fe163b22bb05776e7db1218dd1c685088d63"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/zero_left_knee.jsonl",
+      "sha256": "c9f598b7451e9b70764f857f86d3d1d688151234c2fd7e27f6b18871615b6738"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/zero_mouth.jsonl",
+      "sha256": "ca237c488104dcc61e95eeb87bab2e89e8ce3e6ec9c3b22f41bfae008c89a781"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/zero_neck_pitch.jsonl",
+      "sha256": "79ff6a83ffa6672b6844c620140064475bdfc2f7b825eb7d23a146b2b3a368eb"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/zero_right_ankle.jsonl",
+      "sha256": "584489256d5b774527efa180527f0d9290c5bb89e00ef48ae2d842ec2d7d7cb6"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/zero_right_hip_pitch.jsonl",
+      "sha256": "dca128beaafe8eb1a2b008797b7e90f1ebae3c690f5b247686009a626278f013"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/zero_right_hip_roll.jsonl",
+      "sha256": "3bcdb1b1611e98ba2b4e82a63fdb82c966e6aee7cc173b120efdd4bca12af380"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/zero_right_hip_yaw.jsonl",
+      "sha256": "e4c989fddf586b8f1c0f8ac5732b00bab85a8d46e861edb49be344a8e5896d16"
+    },
+    {
+      "path": "calibration/examples/synthetic_data/joints/zero_right_knee.jsonl",
+      "sha256": "3b33bb6a818a3de8130b64eafc1aec289343ba787cc423dfdb6e49856fb81d61"
+    },
+    {
+      "path": "calibration/integration-0.16.3/evidence/calibration-camera-v2-0.16.3.patch",
+      "sha256": "84f9a71907a41877cd8d387eff3da234aecd69d64e3685a9fb893bad8fcf1f04"
+    },
+    {
+      "path": "calibration/integration-0.16.3/evidence/calibration-v2-0.16.3.patch",
+      "sha256": "aafbfb4e57a4ae6738dae80b6b3a7b897b37337696e190f4abcd83b12c8b4151"
+    },
+    {
+      "path": "calibration/integration-0.16.3/evidence/demo/robotd.toml",
+      "sha256": "51e286c3ccc027f9b92f920b39a85b18e39e347387fe4c24e275cc228151d154"
+    },
+    {
+      "path": "calibration/integration-0.16.3/web/calibration_web.py",
+      "sha256": "d1af47cb488d1a992de1ae19a1639e3c56b470db7cdadbf405159beae0f65d64"
+    },
+    {
+      "path": "calibration/integration-0.16.3/web/camera_config.py",
+      "sha256": "cf577e00078e937b769016505635884637332b32a14402b285ee95bc1080f4be"
+    },
+    {
+      "path": "calibration/integration-0.16.3/web/index.html",
+      "sha256": "f31ad10dae590682244542ef556d74121a93f216ea903b6d40e508d8fb3f52dd"
+    },
+    {
+      "path": "calibration/tests/test_calibration.py",
+      "sha256": "ffe1ec954c1944b36a93508d24d258e57fc7c2ccaf123dba42f7b351b9e98a4e"
+    },
+    {
+      "path": "calibration/tests/test_camera_extension.py",
+      "sha256": "b99222bb72f4f46f72b7fd4c46c0245d0bd813cffcb25d311ec59619320bd727"
+    },
+    {
+      "path": "calibration/tests/test_gyro_v2_web.py",
+      "sha256": "14f3e12ec05e2498d54c8ce8b2bc83fc028325338e10df0c181bb6901bfb8675"
+    },
+    {
+      "path": "calibration/tests/test_source_patcher.py",
+      "sha256": "18bf1478c23670a7394e406e34273e100de3206f12bb30f60a9ff62544f9d0fe"
+    },
+    {
+      "path": "calibration/web/calibration_web.py",
+      "sha256": "eb8bbb74c1fa7ccd8a3c4d3c99a9e7f3d22307d3fefc072b22b505a65f7fa4e7"
+    },
+    {
+      "path": "calibration/web/index.html",
+      "sha256": "e727925e15f50ec02bdc39d6ef0298bc216366c590730e4296c2ccd73033d934"
+    }
+  ],
+  "scope": "Source code, source patches, synthetic fixtures only. No screenshots, historical deployment documents, local execution evidence, binaries or caches."
+}

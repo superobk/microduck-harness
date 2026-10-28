@@ -1,0 +1,20 @@
+[Unit]
+Description=Microduck autonomy gateway
+After=network-online.target
+
+[Service]
+Type=simple
+# Replace the user, group and install directory with your workstation values.
+User=microduck
+Group=microduck
+WorkingDirectory=/opt/microduck-harness
+EnvironmentFile=/etc/microduck-harness/gateway.env
+ExecStart=/opt/microduck-harness/.venv/bin/duck-harness gateway --config /opt/microduck-harness/config/live.example.json
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=8
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
+

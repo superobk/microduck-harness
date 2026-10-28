@@ -1,0 +1,21 @@
+{
+  "mode": "live",
+  "decision_mode": "hybrid",
+  "executor_url": "http://127.0.0.1:8766",
+  "vision_url": "http://127.0.0.1:8767",
+  "jev_url": "http://127.0.0.1:8149",
+  "bounds": [-1.5, 1.5, -1.5, 1.5],
+  "boundary_margin_m": 0.2,
+  "min_clearance_m": 0.30,
+  "arrival_distance_m": 0.55,
+  "speed_m_s": 0.06,
+  "yaw_rate_rad_s": 0.4,
+  "pulse_s": 0.6,
+  "max_observation_age_s": 0.8,
+  "jev_threshold": 0.85,
+  "jev_margin": 0.20,
+  "jev_max_streak": 8,
+  "evidence_frames": 3,
+  "database": "data/harness.sqlite3"
+}
+

@@ -1,0 +1,7 @@
+[board]
+version="zero3"
+[media]
+quality="720p30"
+camera_rotate=90
+[bus]
+port="/dev/ttyS2"

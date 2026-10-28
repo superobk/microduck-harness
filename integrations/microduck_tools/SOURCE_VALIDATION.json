@@ -1,0 +1,62 @@
+[
+  {
+    "target_tag": "daemon-v0.16.3",
+    "native_commit": "0b2b82f56ac1e32d69018837ac1cd7d4c687f5a0",
+    "tools_commit": "2b93cb3afc32fa343cc612ee060e94c5bdd7b01d",
+    "repository": "/tmp/microduck-native-0.16.3",
+    "files": [
+      "robotd-params/src/lib.rs",
+      "robotd-params/src/registry.rs",
+      "robotd-params/src/edit.rs",
+      "duck-control/src/bus.rs",
+      "duck-control/src/imu.rs",
+      "robotd/src/main.rs",
+      "mediad/src/lib.rs",
+      "mediad/src/main.rs",
+      "mediad/src/web.rs",
+      "mediad/src/camera_rotation.rs"
+    ],
+    "applied": true,
+    "patch_sha256": "089e9bb180a5433eb3e2257a67c503d87540a7ba5112a1be21b3c0bb355aef44",
+    "rust_compiled": false,
+    "hardware_tested": false,
+    "next_step": "Review git diff, run cargo fmt and native tests/build on the target build host; nothing was installed or restarted.",
+    "dry_run_left_checkout_unchanged": true,
+    "actual_git_apply_succeeded": true,
+    "reverse_check_succeeded": true,
+    "git_diff_check_succeeded": true,
+    "recorded_date": "2026-10-28",
+    "rust_toolchain_available": false,
+    "git_patch_file": "patches/calibration-camera-0.16.3.patch"
+  },
+  {
+    "target_tag": "daemon-v0.17.8",
+    "native_commit": "942e58e3aa6dbb28e7037203fff11866122c7567",
+    "tools_commit": "2b93cb3afc32fa343cc612ee060e94c5bdd7b01d",
+    "repository": "/tmp/microduck-native-0.17.8",
+    "files": [
+      "robotd-params/src/lib.rs",
+      "robotd-params/src/registry.rs",
+      "robotd-params/src/edit.rs",
+      "duck-control/src/bus.rs",
+      "duck-control/src/imu.rs",
+      "robotd/src/main.rs",
+      "mediad/src/lib.rs",
+      "mediad/src/main.rs",
+      "mediad/src/web.rs",
+      "mediad/src/camera_rotation.rs"
+    ],
+    "applied": true,
+    "patch_sha256": "44dddaf7ea8eecb88577ad3cb9a1d0967145b7b4396ad31f7261ce365d52ec4e",
+    "rust_compiled": false,
+    "hardware_tested": false,
+    "next_step": "Review git diff, run cargo fmt and native tests/build on the target build host; nothing was installed or restarted.",
+    "dry_run_left_checkout_unchanged": true,
+    "actual_git_apply_succeeded": true,
+    "reverse_check_succeeded": true,
+    "git_diff_check_succeeded": true,
+    "recorded_date": "2026-10-28",
+    "rust_toolchain_available": false,
+    "git_patch_file": "patches/calibration-camera-0.17.8.patch"
+  }
+]

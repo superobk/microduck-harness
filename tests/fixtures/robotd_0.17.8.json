@@ -1,0 +1,331 @@
+{
+  "fixture_kind": "synthetic_protocol_fixture_not_hardware_capture",
+  "upstream_tag": "daemon-v0.17.8",
+  "upstream_commit": "942e58e3aa6dbb28e7037203fff11866122c7567",
+  "source_urls": [
+    "https://github.com/pollen-robotics/microduck/blob/daemon-v0.17.8/duck-ipc-proto/src/lib.rs",
+    "https://github.com/pollen-robotics/microduck/blob/daemon-v0.17.8/robotd/src/main.rs",
+    "https://github.com/pollen-robotics/microduck/blob/daemon-v0.17.8/mediad/src/frame.rs",
+    "https://github.com/pollen-robotics/microduck/blob/daemon-v0.17.8/tof/src/main.rs",
+    "https://github.com/pollen-robotics/microduck/blob/daemon-v0.17.8/tof/src/lib.rs",
+    "https://github.com/pollen-robotics/microduck/blob/daemon-v0.17.8/kinematics/src/tof.rs"
+  ],
+  "audited_structs": [
+    "HelloResult",
+    "SubscribeResult",
+    "HealthResult",
+    "LoopHealth",
+    "BusHealth",
+    "ImuHealth",
+    "RobotState",
+    "ImuState",
+    "SafetyState",
+    "FramesState",
+    "PoseState",
+    "MediaFrameHeader",
+    "TofStreamResult",
+    "TofFrame"
+  ],
+  "hello": {
+    "api_version": 44,
+    "daemon_version": "0.17.8",
+    "revision": "942e58e3aa6dbb28e7037203fff11866122c7567"
+  },
+  "subscribe": {
+    "accepted": true,
+    "walk": "fixture-walk.onnx",
+    "stand": "fixture-stand.onnx"
+  },
+  "health": {
+    "healthy": true,
+    "control_loop": {
+      "target_hz": 50,
+      "achieved_hz": 50,
+      "ticks": 600,
+      "missed": 0,
+      "last_tick_age_ms": 5
+    },
+    "bus": {
+      "consecutive_errors": 0,
+      "startup_failures": 0
+    },
+    "imu": {
+      "ready": true,
+      "stale_blocks": 0,
+      "consecutive_stale_blocks": 0
+    }
+  },
+  "state": {
+    "t": 12,
+    "t_ns": 12000000000,
+    "move": {
+      "requested": [
+        0,
+        0,
+        0
+      ],
+      "applied": [
+        0,
+        0,
+        0
+      ]
+    },
+    "head": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "policy": "stand",
+    "safety": {
+      "fallen": false,
+      "limp": false,
+      "gravity": [
+        0,
+        0,
+        -1
+      ],
+      "gain": 300,
+      "picked_up": false
+    },
+    "loop": {
+      "hz": 50,
+      "missed": 0
+    },
+    "joints": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "targets": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "imu": {
+      "gyro": [
+        0,
+        0,
+        0
+      ],
+      "quat": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    "frames": {
+      "camera": {
+        "pos": [
+          0.1,
+          0,
+          0.15
+        ],
+        "quat": [
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      "tof": {
+        "pos": [
+          0.1,
+          0,
+          0.13
+        ],
+        "quat": [
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "tof_stream": {
+    "accepted": true,
+    "sensor": "VL53L8CX",
+    "rows": 8,
+    "cols": 8,
+    "hz": 15
+  },
+  "tof_frame": {
+    "seq": 1,
+    "at_us": 12000000,
+    "t_ns": 12000000000,
+    "rows": 8,
+    "cols": 8,
+    "distance_mm": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "status": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ]
+  },
+  "media_frame": {
+    "width": 2,
+    "height": 1,
+    "format": "UYVY",
+    "bytes": 4,
+    "captured_at_unix_us": 1800000000000000,
+    "rotate": 180
+  },
+  "media_bytes": [
+    128,
+    20,
+    128,
+    40
+  ]
+}

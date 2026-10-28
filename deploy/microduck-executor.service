@@ -1,0 +1,29 @@
+[Unit]
+Description=Microduck bounded locomotion executor
+After=network.target robotd.service mediad.service tofd.service
+
+[Service]
+Type=simple
+# Use an existing account allowed to connect to the native daemon sockets.
+# Replace these two names to match the board's actual socket ownership.
+User=microduck
+Group=microduck
+# Native observation sockets normally belong to this group. Verify on the board.
+SupplementaryGroups=robot
+WorkingDirectory=/opt/microduck-harness
+Environment=EXECUTOR_HOST=127.0.0.1
+Environment=EXECUTOR_ALLOW_MOTION=0
+Environment=EXECUTOR_ROBOTD_VERSION=auto
+EnvironmentFile=/etc/microduck-harness/executor.env
+ExecStart=/opt/microduck-harness/.venv/bin/uvicorn microduck_harness.executor:create_executor_app --factory --host ${EXECUTOR_HOST} --port 8766 --workers 1
+Restart=on-failure
+RestartSec=2
+TimeoutStopSec=3
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target

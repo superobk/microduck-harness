@@ -1,0 +1,54 @@
+{
+  "version": "0.3.0",
+  "recorded_date": "2026-10-28",
+  "test_kind": "local software and synthetic protocol/vision fixtures",
+  "hardware_tested": false,
+  "real_model_inference_tested": false,
+  "tests": 351,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_s": 12.822,
+  "test_files": {
+    "test_aruco_layout": 6,
+    "test_camera_calibration": 3,
+    "test_contracts": 1,
+    "test_decisions": 43,
+    "test_deployment": 17,
+    "test_engine": 11,
+    "test_executor": 15,
+    "test_firmware_compatibility": 64,
+    "test_gateway": 8,
+    "test_guard": 45,
+    "test_model_config": 31,
+    "test_plugins": 71,
+    "test_print_assets": 12,
+    "test_tools_bridge": 15,
+    "test_vision": 9
+  },
+  "pdf_pages": {
+    "microduck-aruco-print-pack.pdf": 5,
+    "microduck-aruco-placement-guide.pdf": 5
+  },
+  "pdf_visual_review": "unchanged v0.2 assets: all 10 pages previously rendered and inspected; v0.3 re-ran PDF geometry/detection tests",
+  "supported_robotd": {
+    "0.16.3": 41,
+    "0.17.8": 44
+  },
+  "upstream_tests": {
+    "count": 35,
+    "failures": 0,
+    "elapsed_s": 5.617,
+    "kind": "pinned microduck-tools unittest suite"
+  },
+  "upstream_snapshot_files": 65,
+  "native_rust_compiled": false,
+  "native_rust_tests_run": false,
+  "native_patch_validation": "integrations/microduck_tools/SOURCE_VALIDATION.json",
+  "real_cross_uid_proc_permission_test": "passed; synthetic process, real kernel denial, fixture systemd properties",
+  "warnings": [
+    "Python fork-in-multithreaded-process deprecation in the passed synthetic cross-UID test"
+  ],
+  "guide_bash_blocks_syntax_checked": 68,
+  "workbench_dom_ids": 56
+}

@@ -1,0 +1,66 @@
+# Copy to deployment.local.toml. Keep secrets in the generated pc/secrets.env.
+# Every relative input path below is relative to this TOML file unless noted.
+schema = 1
+
+[robot]
+version = "0.17.8" # or "0.16.3"; the matching native plugin build is required
+board = "zero3"
+# References the existing native unit's config; changing this does not edit that unit.
+native_config = "/etc/robot/robotd.toml"
+
+[network]
+transport = "ssh" # "ssh" (recommended) or "lan"
+ssh_target = "YOUR_USER@YOUR_ZERO_HOST"
+zero_host = "YOUR_ZERO_IP" # executor address only when transport="lan"
+gateway_port = 8765
+executor_port = 8766
+vision_port = 8767
+tools_port = 8768 # microduck-tools operator UI; keep loopback + SSH
+
+[paths]
+workstation_root = ".."
+workstation_data = "data/live" # relative to workstation_root; separate from demo, not overwritten by render
+zero_root = "/opt/microduck-harness"
+workstation_user = "YOUR_PC_USER" # only for optional Linux systemd units
+zero_user = "YOUR_USER" # an actual account with native socket / runtime read access
+
+[plugins]
+required = true
+
+[plugins.calibration]
+path = "/etc/robot/robot-calibration.toml"
+# Both bundled native patches write this fixed path. Keep it for the first deployment.
+runtime_receipt = "/run/robotd/calibration-effective.json"
+
+[plugins.camera]
+rotation = 90 # 0 / 90 / 180 / 270; display metadata, raw UYVY remains unchanged
+# A different reader path also requires a separately reviewed native writer change.
+runtime_receipt = "/run/mediad/camera-effective.json"
+
+[model]
+decision_mode = "hybrid"
+base_url = "" # can be configured later in the authenticated workbench
+model_id = "GLM5.3-Flash"
+timeout_s = 25
+json_mode = true
+
+[agentjev]
+url = "http://127.0.0.1:8149"
+timeout_s = 2
+threshold = 0.85
+margin = 0.20
+max_streak = 8
+
+[vision]
+source = "aruco-lab.example.json"
+calibration_result = "" # after measurement, e.g. "../data/camera-calibration.json"
+
+[motion]
+allow = false # edit true only for the deliberate movement stage, render, restart executor
+bounds = [-1.0, 1.0, -1.0, 1.0]
+boundary_margin_m = 0.20
+arrival_distance_m = 0.55
+min_clearance_m = 0.30
+speed_m_s = 0.06
+yaw_rate_rad_s = 0.4
+pulse_s = 0.6

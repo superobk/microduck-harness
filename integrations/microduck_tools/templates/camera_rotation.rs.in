@@ -1,0 +1,112 @@
+//! Camera orientation configuration; pixels stay on the existing zero-copy video path.
+use std::path::Path;
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct Rotation {
+    pub degrees: u32,
+    pub source: &'static str,
+}
+
+/// Existing command-line overrides remain visible instead of being mistaken for saved config.
+pub fn resolve(
+    board: u32,
+    configured: Option<u32>,
+    cli: Option<u32>,
+) -> Result<Rotation, &'static str> {
+    let (degrees, source) = match (cli, configured) {
+        (Some(value), _) => (value, "command_line"),
+        (None, Some(value)) => (value, "configuration"),
+        (None, None) => (board, "board_default"),
+    };
+    if ![0, 90, 180, 270].contains(&degrees) {
+        return Err("camera correction must be 0, 90, 180 or 270 degrees clockwise");
+    }
+    Ok(Rotation { degrees, source })
+}
+
+/// Called only after the actual pipeline and frame endpoint start. Never re-read saved settings.
+pub fn publish(
+    dest: &Path,
+    config: &Path,
+    rotation: Rotation,
+    flip_in_pipeline: bool,
+    width: u32,
+    height: u32,
+) -> std::io::Result<()> {
+    let payload = serde_json::json!({
+        "source": "mediad:camera:live",
+        "target_tag": "__TARGET__",
+        "pid": std::process::id(),
+        "pipeline_started": true,
+        "config_path": std::fs::canonicalize(config).unwrap_or_else(|_| config.to_owned()),
+        "rotation_degrees": rotation.degrees,
+        "rotation_source": rotation.source,
+        "frame_rotation_degrees": if flip_in_pipeline { 0 } else { rotation.degrees },
+        "flip_in_pipeline": flip_in_pipeline,
+        "width": width,
+        "height": height,
+    });
+    let tmp = dest.with_extension(format!("{}.tmp", std::process::id()));
+    std::fs::write(
+        &tmp,
+        serde_json::to_vec_pretty(&payload).map_err(std::io::Error::other)?,
+    )?;
+    std::fs::rename(tmp, dest)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn quarter_turns_defaults_and_overrides_are_explicit() {
+        assert_eq!(
+            resolve(90, None, None).unwrap(),
+            Rotation {
+                degrees: 90,
+                source: "board_default"
+            }
+        );
+        assert_eq!(resolve(0, None, None).unwrap().degrees, 0);
+        for angle in [0, 90, 180, 270] {
+            assert_eq!(resolve(90, Some(angle), None).unwrap().degrees, angle);
+        }
+        assert_eq!(
+            resolve(90, Some(270), Some(180)).unwrap(),
+            Rotation {
+                degrees: 180,
+                source: "command_line"
+            }
+        );
+        assert!(resolve(90, Some(45), None).is_err());
+    }
+    #[test]
+    fn receipt_retains_running_settings_when_disk_changes() {
+        let dir = tempfile::tempdir().unwrap();
+        let config = dir.path().join("robotd.toml");
+        std::fs::write(&config, "[media]\ncamera_rotate = 270\n").unwrap();
+        let dest = dir.path().join("camera-effective.json");
+        publish(
+            &dest,
+            &config,
+            resolve(90, Some(90), None).unwrap(),
+            false,
+            1280,
+            720,
+        )
+        .unwrap();
+        let value: serde_json::Value =
+            serde_json::from_slice(&std::fs::read(dest).unwrap()).unwrap();
+        assert_eq!(value["rotation_degrees"], 90);
+        assert_eq!(value["frame_rotation_degrees"], 90);
+        assert_eq!(value["pid"], std::process::id());
+    }
+    #[test]
+    fn invalid_saved_angle_is_rejected_by_the_shared_schema() {
+        let dir = tempfile::tempdir().unwrap();
+        let config = dir.path().join("robotd.toml");
+        for angle in [45, 360] {
+            std::fs::write(&config, format!("[media]\ncamera_rotate = {angle}\n")).unwrap();
+            assert!(robotd_params::Params::load(&config, true).is_err());
+        }
+    }
+}
